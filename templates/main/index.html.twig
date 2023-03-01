@@ -19,11 +19,10 @@
 <script>
     $(document).ready(function(){
         $(".AddToCart").on("click", function(event){ 
-        // alert("start !");
+
             event.preventDefault();
             var id = $(this).data("id");    
 
-            // je vais l'envoyer en AJAX
             $.ajax({
                 url: "/ajax/addtocart",
                 type: "GET",
@@ -36,9 +35,11 @@
                     let image = data.image;
                     let slug  = data.Slug;
 
+                       console.log( $(".injecttitle").text(title) );
                     // on injecte le titre dans le html
-                    $.injecttitle(data.Titre);
-                    
+                    $(".injecttitle").text(title);
+
+
                 }
             });
         });

@@ -6,6 +6,9 @@ use App\Repository\OrderRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Constraints\NotBlank;
+
 #[ORM\Entity(repositoryClass: OrderRepository::class)]
 #[ORM\Table(name: '`order`')]
 class Order
@@ -46,33 +49,45 @@ class Order
     private ?float $grandTotal = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank]
+    #[Assert\Length(2,50)]
+
     private ?string $firstName = null;
 
     #[ORM\Column(length: 50)]
     private ?string $middleName = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank]
+    #[Assert\Length(min: 2, max: 50)]
     private ?string $lastName = null;
 
     #[ORM\Column(length: 15)]
+    #[Assert\NotBlank]
+
     private ?string $mobile = null;
 
     #[ORM\Column(length: 50)]
     private ?string $email = null;
 
+
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank]
     private ?string $line1 = null;
 
     #[ORM\Column(length: 50)]
     private ?string $line2 = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank]
     private ?string $city = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank]
     private ?string $province = null;
 
     #[ORM\Column(length: 50)]
+    #[Assert\NotBlank]
     private ?string $country = null;
 
     #[ORM\Column]

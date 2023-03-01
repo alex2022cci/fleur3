@@ -26,14 +26,14 @@ class UserFixtures extends Fixture
 
         // je vais créer un utilisateur de test en ROLE_ADMIN
         $user = new User();
-        $user->setEmail( 'guillaume@gmail.com' );
+        $user->setEmail( 'alex2022cci@outlook.fr' );
         $user->setPassword( $this->encoder->hashPassword( $user, '123456789' ) );
         $user->setIsVerified( '1' );
         $user->setRoles( array('ROLE_ADMIN') );
-        $user->setFirstName( 'Guillaume' );
-        $user->setMiddleName( 'Auxioma' );
-        $user->setLastName( 'DEVAUX' );
-        $user->setMobile( '0766068003' );
+        $user->setFirstName( 'Alex' );
+        $user->setMiddleName( 'none' );
+        $user->setLastName( 'C' );
+        $user->setMobile( '0000000000' );
         $user->setVendor( '1' );
         $user->setRegistredAt(new \DateTimeImmutable);
         $user->setLastLogin(new \DateTimeImmutable);
